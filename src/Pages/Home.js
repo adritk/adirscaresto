@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
 import '../Css/Home.css'
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavbarToggler, MDBCollapse, MDBDropdown,MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem} from "mdbreact";
+import $ from 'jquery'
+import { data, cafe, order } from '../myData'
+
+
+// IMPORT ICON
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Delivery from '../Images/delivery.svg'
 import Burger from '../Images/burger.svg'
-
-import {
-    MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
-    MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon
-} from "mdbreact";
-
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-
-import CafePizza from '../Images/cafepizza.jpg'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AirportShuttleIcon from '@material-ui/icons/AirportShuttle';
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import $ from 'jquery'
-import { data, cafe, order } from '../myData'
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
+
 class Home extends Component {
 
     componentDidMount() {
@@ -80,20 +77,20 @@ class Home extends Component {
                     <section id="second-section">
                         <img src={Delivery} style={{ height: '100%', width: '40%' }} alt="notfound" />
                         <div className="delivery-text">
-                            <p>$0 delivery for 30 days!</p>
-                            <p style={{ color: '#BBB6AE', fontSize: 10 }}>$0 delivery fee orders over $10 for 30 </p>
+                            <p>Rp0 delivery for 30 days!</p>
+                            <p style={{ color: '#BBB6AE', fontSize: 10 }}>Rp0 delivery fee orders for 30 days</p>
                         </div>
                     </section>
 
                     <section id="third-section">
-                        <p>Restaurants  <img className="imgburger" src={Burger} /><button className="button button5" disabled><AccessTimeIcon />&nbsp; <span style={{ fontSize: 10 }}>Delivery : Now </span></button></p>
+                        <p>Restaurants  <img className="imgburger" src={Burger} alt="notfound" /><button className="button button5" disabled><AccessTimeIcon />&nbsp; <span style={{ fontSize: 10 }}>Delivery : Now </span></button></p>
                         <div className="flex-container">
                             {
                                 data.map(val => {
                                     return (
                                         <button type="submit" className="btnklik">
                                             <div className="bulet">
-                                                <img src={val.src} style={{ width: 35 }} />
+                                                <img src={val.src} style={{ width: 35 }} alt="notfound" />
                                             </div>
                                             <span style={{ fontSize: 12 }}>{val.name}</span>
                                         </button>
@@ -110,7 +107,7 @@ class Home extends Component {
                                 cafe.map(val => {
                                     return (
                                         <div className="box-menu">
-                                            <img src={val.src} className="card-menu" />
+                                            <img src={val.src} className="card-menu" alt="notfound" />
                                             <div className="textOnCard">{val.distance}<span style={{ fontSize: 10 }}>Min</span></div>
                                             <p style={{ fontSize: 18, fontWeight: 500, margin: 10 }}>{val.name}</p>
                                             <div style={{ margin: 5 }}>
@@ -127,7 +124,7 @@ class Home extends Component {
                 </div>
 
                 <aside>
-
+                            
                     <MDBNavbar color="#FFF7ED" dark expand="md">
                         <MDBNavbarToggler onClick={this.toggleCollapse} />
                         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
@@ -135,7 +132,7 @@ class Home extends Component {
                                 <MDBNavItem >
                                     <MDBDropdown basic>
                                         <MDBDropdownToggle nav>
-                                            <AccountCircleIcon style={{ fontSize: 36, color: 'grey' }} />
+                                            <AccountCircleIcon style={{ fontSize: 36, color: '#EFCA65' }} />
                                         </MDBDropdownToggle>
                                         <MDBDropdownMenu className="dropdown-default">
                                             <MDBDropdownItem href="#!">Login</MDBDropdownItem>
@@ -159,7 +156,7 @@ class Home extends Component {
                         order.map(val => {
                             return (
                                 <div className="list-menu">
-                                    <img className="order-menu" src={val.src} />
+                                    <img className="order-menu" src={val.src} alt="notfound" />
                                     <span style={{ marginLeft: 25, fontWeight: 500 }}>{val.qty}</span>
                                     <span style={{ marginLeft: 25, fontWeight: 500 }}>{val.name}</span>
                                     <span style={{ marginLeft: 40, color: '#BBB6AE', fontSize: 12 }}>{val.price}</span>
@@ -176,11 +173,6 @@ class Home extends Component {
                         <span style={{ marginLeft: 40, color: '#BBB6AE', fontSize: 12 }}>IDR 0</span>
                     </div>
 
-                    {/* <div className="list-menu">
-                        <button className="button-delivery" disabled><AirportShuttleIcon fontSize="large" /></button>
-                        <span className="delivery" style={{ marginLeft: 40, fontWeight: 500 }}>Delivery</span>
-                        <span style={{ marginLeft: 100, color: '#BBB6AE', fontSize: 12 }}>IDR 0</span>
-                    </div> */}
 
                     <div className="total-payment">
                         <span className="total">Total :<span style={{ marginLeft: 10 }}>IDR {this.renderTotal()}</span></span>

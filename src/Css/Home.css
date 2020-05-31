@@ -1,15 +1,12 @@
 #content {
     float: left;
     width: 75%;
-    /* background-color: aqua; */
-    /* height: 900px; */
 }
 
 aside {
     float: right;
     width: 25%;
     background-color: #FFF7ED;
-    /* height: 700px; */
 }
 
 #second-section {
@@ -88,6 +85,10 @@ aside {
     width: 14%;
   }
 
+  .navbar {
+      background: #FB6D3A !important;
+  }
+
   .button-small {
     background-color: hsla(0, 100%, 90%, 0.1);
     border: none;
@@ -105,7 +106,6 @@ aside {
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        /* background-color: DodgerBlue; */
         justify-content: flex-start;
       }
 
@@ -134,7 +134,6 @@ aside {
       .menu-container {
         display: flex;
         flex-wrap: wrap;
-        /* background-color: yellow; */
         margin-bottom: 30px;
       }
 
@@ -209,7 +208,6 @@ aside {
 
     .button-delivery {
         background-color: hsla(44, 47%, 66%, 0.1);
-        /* background-color: chocolate; */
         box-sizing: border-box;
         border: none;
         color: #EFCA65;
@@ -253,23 +251,26 @@ aside {
     @media screen and (max-width: 1095px) {
    
         #first-section,
-        #second-section,
-        aside {
-            /* width: 100%; */
-            padding: 0;;
+        #second-section
+       {
+            width: 100%;
+            padding: 0;
         }
-        aside { 
-            position: absolute;
-            width:72%;
+
+        aside {
+            width: 60%;
+            float: left;
             margin-left: 100px;
         }
 
-        #first-section,
-        #second-section,
-        #third-section,
-        #four-section {
-            position: relative;
-            top: 1000px;
+        .order-menu {
+            width: 40%;
+            height: 50%;
+            text-align: center;
+        }
+
+        #content {
+            margin-left: 100px;
         }
      }
 
@@ -307,10 +308,6 @@ aside {
      }
 
 
-
-
-
-
      @media only screen and (max-width: 1000px) {
             #content {
                 margin-left: 50px;
@@ -320,8 +317,6 @@ aside {
                 width: 35%;
             }
      }
-
-
 
 
   @media only screen and (min-width: 500px) {
@@ -352,7 +347,6 @@ aside {
   }
   
   
-
 @media only screen and (max-width: 824px) {
     .delivery-text {
         margin-right: 10px;
