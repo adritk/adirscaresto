@@ -60,7 +60,7 @@ aside {
 
   .delivery-text {
       float: right;
-      margin: 90px 300px 0px 0px;
+      margin: 90px 100px 0px 0px;
       color: #FB703E;
       font-weight: 900;
       font-size: 24px;
@@ -384,8 +384,6 @@ aside {
     #second-section {
         height: 17vh;
     }
-
-  
 
     .textOnCard {
         position: absolute;
