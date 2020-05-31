@@ -146,7 +146,8 @@ class Home extends Component {
                             </MDBNavbarNav>
                         </MDBCollapse>
                     </MDBNavbar>
-
+                    
+                    <h3 style={{marginTop: 30, textAlign: 'center'}}>My Order</h3>
                     <div className="box-order">
                         <p>Menteng Sreet <span style={{ marginLeft: 115 }}>Edit</span></p>
                         <button className="button-small" disabled><AccessTimeIcon />&nbsp;35 min</button><span>Choose Time</span>
